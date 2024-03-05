@@ -25,13 +25,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
       /* Example to get the name of the event */
       //   console.log("Event name:", e.data.event);
 
-
       if (e.data.event == "calendly.event_scheduled") {
-        window.dataLayer = window.dataLayer || []
+        window.dataLayer = window.dataLayer || [];
         window.dataLayer.push({
-            event: "calendly_event_scheduled",
-            event_scheduled: true
-        })
+          event: "calendly.event_scheduled",
+        });
       }
 
       /* Example to get the payload of the event */
