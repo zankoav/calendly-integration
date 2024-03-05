@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-  document.querySelectorAll("a.calendly-integration").forEach((element) => {
+  document.querySelectorAll(".calendly-integration").forEach((element) => {
     element.addEventListener(
       "click",
       function (event) {
