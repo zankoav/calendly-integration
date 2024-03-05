@@ -4,7 +4,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
       "click",
       function (event) {
         event.preventDefault();
-        Calendly.initPopupWidget({ url: "https://calendly.com/zankoav/30min" });
+        Calendly.initPopupWidget({
+          url: "https://calendly.com/eugene-vab/30min",
+        });
       },
       false
     );
@@ -21,10 +23,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
   window.addEventListener("message", function (e) {
     if (isCalendlyEvent(e)) {
       /* Example to get the name of the event */
-      console.log("Event name:", e.data.event);
+      //   console.log("Event name:", e.data.event);
+
+
+      if (e.data.event == "calendly.event_scheduled") {
+        window.dataLayer = window.dataLayer || []
+        window.dataLayer.push({
+            event: "calendly_event_scheduled",
+            event_scheduled: true
+        })
+      }
 
       /* Example to get the payload of the event */
-      console.log("Event details:", e.data.payload);
+      //   console.log("Event details:", e.data.payload);
     }
   });
 });
