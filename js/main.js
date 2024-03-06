@@ -35,6 +35,7 @@
     return matches ? decodeURIComponent(matches[1]) : undefined;
   }
 
+  const uri = new URL(location.href);
   let resultLink = getCookie("calendly_link_v4");
   if (resultLink) {
     let utm_term =
