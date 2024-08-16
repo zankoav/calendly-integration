@@ -46,7 +46,7 @@
   }
 
   let baseUrl = "https://calendly.com/eugene-vab/30min";
-  document.querySelectorAll(".calendly-integration").forEach((element) => {
+  document.querySelectorAll(".calendly-integration, .calendly-integration-table-block .btn").forEach((element) => {
     element.addEventListener(
       "click",
       function (event) {
